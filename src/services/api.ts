@@ -4,7 +4,7 @@ import { firebaseAuth } from '../config/firebase';
 
 export const api: AxiosInstance = axios.create({
 
-    baseURL: "https://spendnote-spendnote-api.xgg4n8.easypanel.host",
+    baseURL: import.meta.env.VITE_API_URL,
     timeout: 10000,
 });
 
