@@ -1,73 +1,47 @@
-# React + TypeScript + Vite
+💸 SpendNote Interface
+<p align="center"> Interface moderna de gestão financeira pessoal com foco em performance, segurança e experiência do usuário. </p> <p align="center"> <img src="https://img.shields.io/badge/React-18-blue?logo=react" /> <img src="https://img.shields.io/badge/TypeScript-Strict-blue?logo=typescript" /> <img src="https://img.shields.io/badge/Vite-Fast-purple?logo=vite" /> <img src="https://img.shields.io/badge/Firebase-Auth-orange?logo=firebase" /> <img src="https://img.shields.io/badge/Status-Production--Ready-green" /> </p>
+🚀 Sobre o Projeto
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+O SpendNote Interface é uma aplicação frontend moderna desenvolvida para oferecer uma experiência fluida e eficiente no gerenciamento de finanças pessoais.
 
-Currently, two official plugins are available:
+A aplicação permite que usuários controlem despesas, registrem receitas e visualizem dados financeiros em tempo real, com autenticação segura baseada no Firebase.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Este projeto foi desenvolvido com forte foco em:
 
-## React Compiler
+⚡ Performance (Vite + renderização otimizada)
+🔐 Segurança (Firebase Authentication + tokens)
+🧱 Arquitetura escalável
+🎯 Código limpo e de fácil manutenção
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+🔐 Autenticação (Firebase)
 
-## Expanding the ESLint configuration
+A autenticação é realizada via Firebase Authentication, garantindo um sistema seguro e escalável.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+🔑 Fluxo
+- Usuário realiza login via Firebase
+- Firebase retorna um ID Token (JWT)
+- O frontend envia o token nas requisições
+- O backend valida com Firebase Admin SDK
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+⚙️ Funcionalidades
+- 🔐 Autenticação segura com Firebase
+- 💰 Cadastro de receitas e despesas
+- 📊 Dashboard financeiro
+- 📅 Filtro por mês e ano
+- 📈 Resumo financeiro em tempo real
+- 🔄 Atualização dinâmica de dados
+- 📱 Interface totalmente responsiva
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+🛠️ Tecnologias Utilizadas
+Frontend:
+- React.js
+- TypeScript
+- Vite
+Roteamento
+- React Router
+Estado
+- Context API + Hooks
+Comunicação com API
+- Fetch / Axios
+Autenticação
+- Firebase Authentication
