@@ -8,10 +8,10 @@ A aplicação permite que usuários controlem despesas, registrem receitas e vis
 
 Este projeto foi desenvolvido com forte foco em:
 
-⚡ Performance (Vite + renderização otimizada)
-🔐 Segurança (Firebase Authentication + tokens)
-🧱 Arquitetura escalável
-🎯 Código limpo e de fácil manutenção
+⚡ Performance (Vite + renderização otimizada) 
+🔐 Segurança (Firebase Authentication + tokens) 
+🧱 Arquitetura escalável 
+🎯 Código limpo e de fácil manutenção 
 
 🔐 Autenticação (Firebase)
 
