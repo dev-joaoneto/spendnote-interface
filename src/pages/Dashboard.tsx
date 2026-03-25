@@ -20,6 +20,7 @@ const Dashboard = () => {
     const [month, setMonth] = useState(currentDate.getMonth() + 1);
     const [summary, setSummary] = useState<TransactionSummary>(initialSummary);
     const [monthlyItemsData, setMonthlyItemsData] = useState<MonthlyItem[]>([]);
+    const [radius, setRadius] = useState("80%");
 
     useEffect(() => {
 
@@ -42,6 +43,21 @@ const Dashboard = () => {
         loadTransactionMonthly();
 
     }, [month, year]);
+
+    useEffect(() => {
+        const handleResize = () => {  
+            if (window.innerWidth < 640) {
+                setRadius("60%");
+            } else {
+                setRadius("80%");
+            }
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => {
+        window.removeEventListener('resize', handleResize);
+    };
+    }, []);
 
 
     const renderPieChatLabel = ({payload, percent}:PieLabelRenderProps) => {
@@ -103,17 +119,20 @@ const Dashboard = () => {
                     title="Despesas por Categoria" 
                     hover
                     > {summary.expensesByCategory.length > 0 ? (
-                        <div className='h-72 mt-5'>
+                        <div className='h-60 sm:h-72 mt-5'>
                         <ResponsiveContainer>
                             <PieChart>
                                 <Pie
                                     data={summary.expensesByCategory}
                                     cx="50%"
                                     cy="50%"
-                                    outerRadius={90}
+                                    outerRadius={radius}
                                     dataKey="amount"
                                     nameKey="categoryName"
                                     label={renderPieChatLabel}
+                                    style={{
+                                        fontSize: window.innerWidth < 640 ? "9px" : "16px"
+                                    }}
                                 >
                                     {summary.expensesByCategory.map((entry) => (
                                         <Cell key={entry.categoryId} fill={entry.categoryColor} />
